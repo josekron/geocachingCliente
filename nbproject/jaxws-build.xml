@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-UsuarioService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/UsuarioService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UsuarioService" destdir="${build.generated.dir}/jax-wsCache/UsuarioService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UsuarioService/wsdl/localhost_8080/proyecto5-war/UsuarioService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/UsuarioService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UsuarioService/wsdl/localhost_8080/proyecto5-war/UsuarioService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/UsuarioService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/UsuarioService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-UsuarioService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/UsuarioService"/>
+    </target>
+    <target name="wsimport-client-TesoroService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TesoroService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TesoroService" destdir="${build.generated.dir}/jax-wsCache/TesoroService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TesoroService/wsdl/localhost_8080/proyecto5-war/TesoroService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/TesoroService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TesoroService/wsdl/localhost_8080/proyecto5-war/TesoroService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TesoroService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TesoroService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TesoroService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TesoroService"/>
+    </target>
+    <target name="wsimport-client-AvisoService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AvisoService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AvisoService" destdir="${build.generated.dir}/jax-wsCache/AvisoService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AvisoService/wsdl/localhost_8080/proyecto5-war/AvisoService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/AvisoService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/AvisoService/wsdl/localhost_8080/proyecto5-war/AvisoService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AvisoService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AvisoService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AvisoService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/AvisoService"/>
+    </target>
+    <target name="wsimport-client-EquipoService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/EquipoService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/EquipoService" destdir="${build.generated.dir}/jax-wsCache/EquipoService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/EquipoService/wsdl/localhost_8080/proyecto5-war/EquipoService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/EquipoService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/EquipoService/wsdl/localhost_8080/proyecto5-war/EquipoService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/EquipoService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/EquipoService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-EquipoService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/EquipoService"/>
+    </target>
+    <target name="wsimport-client-DescubrimientoService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/DescubrimientoService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DescubrimientoService" destdir="${build.generated.dir}/jax-wsCache/DescubrimientoService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/DescubrimientoService/wsdl/localhost_8080/proyecto5-war/DescubrimientoService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/DescubrimientoService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/DescubrimientoService/wsdl/localhost_8080/proyecto5-war/DescubrimientoService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/DescubrimientoService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/DescubrimientoService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-DescubrimientoService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/DescubrimientoService"/>
+    </target>
+    <target name="wsimport-client-ComentarioTesoro" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ComentarioTesoro"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ComentarioTesoro" destdir="${build.generated.dir}/jax-wsCache/ComentarioTesoro" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ComentarioTesoro/wsdl/localhost_8080/proyecto5-war/ComentarioTesoro.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/ComentarioTesoro?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ComentarioTesoro/wsdl/localhost_8080/proyecto5-war/ComentarioTesoro.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ComentarioTesoro"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ComentarioTesoro">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ComentarioTesoro" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ComentarioTesoro"/>
+    </target>
+    <target name="wsimport-client-UsuarioService_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/UsuarioService_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UsuarioService_1" destdir="${build.generated.dir}/jax-wsCache/UsuarioService_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UsuarioService_1/wsdl/localhost_8080/proyecto5-war/UsuarioService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/UsuarioService?wsdl" xnocompile="true" xendorsed="true" package="app.webservice2">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UsuarioService_1/wsdl/localhost_8080/proyecto5-war/UsuarioService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/UsuarioService_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/UsuarioService_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-UsuarioService_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice2"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/UsuarioService_1"/>
+    </target>
+    <target name="wsimport-client-ComentarioTesoro_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ComentarioTesoro_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ComentarioTesoro_1" destdir="${build.generated.dir}/jax-wsCache/ComentarioTesoro_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ComentarioTesoro_1/wsdl/localhost_8080/proyecto5-war/ComentarioTesoro.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/ComentarioTesoro?wsdl" xnocompile="true" xendorsed="true" package="app.webservice2">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ComentarioTesoro_1/wsdl/localhost_8080/proyecto5-war/ComentarioTesoro.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ComentarioTesoro_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ComentarioTesoro_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ComentarioTesoro_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice2"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ComentarioTesoro_1"/>
+    </target>
+    <target name="wsimport-client-DescubrimientoService_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/DescubrimientoService_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DescubrimientoService_1" destdir="${build.generated.dir}/jax-wsCache/DescubrimientoService_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/DescubrimientoService_1/wsdl/localhost_8080/proyecto5-war/DescubrimientoService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/DescubrimientoService?wsdl" xnocompile="true" xendorsed="true" package="app.webservice2">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/DescubrimientoService_1/wsdl/localhost_8080/proyecto5-war/DescubrimientoService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/DescubrimientoService_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/DescubrimientoService_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-DescubrimientoService_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice2"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/DescubrimientoService_1"/>
+    </target>
+    <target name="wsimport-client-AvisoService_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AvisoService_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AvisoService_1" destdir="${build.generated.dir}/jax-wsCache/AvisoService_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/AvisoService_1/wsdl/localhost_8080/proyecto5-war/AvisoService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/AvisoService?wsdl" xnocompile="true" xendorsed="true" package="app.webservice2">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/AvisoService_1/wsdl/localhost_8080/proyecto5-war/AvisoService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AvisoService_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AvisoService_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AvisoService_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice2"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/AvisoService_1"/>
+    </target>
+    <target name="wsimport-client-TesoroService_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TesoroService_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TesoroService_1" destdir="${build.generated.dir}/jax-wsCache/TesoroService_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TesoroService_1/wsdl/localhost_8080/proyecto5-war/TesoroService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/proyecto5-war/TesoroService?wsdl" xnocompile="true" xendorsed="true" package="app.webservice2">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TesoroService_1/wsdl/localhost_8080/proyecto5-war/TesoroService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TesoroService_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TesoroService_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TesoroService_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/app/webservice2"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TesoroService_1"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-UsuarioService, wsimport-client-TesoroService, wsimport-client-AvisoService, wsimport-client-EquipoService, wsimport-client-DescubrimientoService, wsimport-client-ComentarioTesoro, wsimport-client-UsuarioService_1, wsimport-client-ComentarioTesoro_1, wsimport-client-DescubrimientoService_1, wsimport-client-AvisoService_1, wsimport-client-TesoroService_1"/>
+</project>

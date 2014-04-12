@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.app/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.app/">
+
+<xs:element name="addFechaBorradoComentarioByID" type="tns:addFechaBorradoComentarioByID"/>
+
+<xs:element name="comentario" type="tns:comentario"/>
+
+<xs:element name="countComentario" type="tns:countComentario"/>
+
+<xs:element name="countComentarioResponse" type="tns:countComentarioResponse"/>
+
+<xs:element name="createComentario" type="tns:createComentario"/>
+
+<xs:element name="devolverListaComentarios" type="tns:devolverListaComentarios"/>
+
+<xs:element name="devolverListaComentariosResponse" type="tns:devolverListaComentariosResponse"/>
+
+<xs:element name="editComentario" type="tns:editComentario"/>
+
+<xs:element name="equipo" type="tns:equipo"/>
+
+<xs:element name="findAllComentario" type="tns:findAllComentario"/>
+
+<xs:element name="findAllComentarioResponse" type="tns:findAllComentarioResponse"/>
+
+<xs:element name="findComentario" type="tns:findComentario"/>
+
+<xs:element name="findComentarioResponse" type="tns:findComentarioResponse"/>
+
+<xs:element name="findRangeComentario" type="tns:findRangeComentario"/>
+
+<xs:element name="findRangeComentarioResponse" type="tns:findRangeComentarioResponse"/>
+
+<xs:element name="modificarComentario" type="tns:modificarComentario"/>
+
+<xs:element name="removeComentario" type="tns:removeComentario"/>
+
+<xs:element name="tesoro" type="tns:tesoro"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="createComentario">
+<xs:sequence>
+<xs:element name="entity" type="tns:comentario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="comentario">
+<xs:sequence>
+<xs:element name="fechaBorrado" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaPublicacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaUltModificacion" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idComentario" type="xs:int" minOccurs="0"/>
+<xs:element name="tesoroidTesoro" type="tns:tesoro" minOccurs="0"/>
+<xs:element name="texto" type="xs:string" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+<xs:element name="usuarioidUsuario" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tesoro">
+<xs:sequence>
+<xs:element name="altitud" type="xs:string" minOccurs="0"/>
+<xs:element name="codSeguridad" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="dificultad" type="xs:int"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaEscondido" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idTesoro" type="xs:int" minOccurs="0"/>
+<xs:element name="latitud" type="xs:string" minOccurs="0"/>
+<xs:element name="longitud" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="tamanio" type="xs:string" minOccurs="0"/>
+<xs:element name="usuarioidUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="zona" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="equipoidEquipo" type="tns:equipo" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:int" minOccurs="0"/>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="rango" type="xs:string" minOccurs="0"/>
+<xs:element name="rol" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="equipo">
+<xs:sequence>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idEquipo" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="countComentario">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="countComentarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findComentario">
+<xs:sequence>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findComentarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:comentario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addFechaBorradoComentarioByID">
+<xs:sequence>
+<xs:element name="idComentario" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllComentario">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllComentarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:comentario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeComentario">
+<xs:sequence>
+<xs:element name="entity" type="tns:comentario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverListaComentarios">
+<xs:sequence>
+<xs:element name="idTesoro" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverListaComentariosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:comentario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeComentario">
+<xs:sequence>
+<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeComentarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:comentario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarComentario">
+<xs:sequence>
+<xs:element ref="tns:comentario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editComentario">
+<xs:sequence>
+<xs:element name="entity" type="tns:comentario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

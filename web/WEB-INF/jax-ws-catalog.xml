@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/proyecto5-war/UsuarioService?wsdl" uri="wsdl/localhost_8080/proyecto5-war/UsuarioService.wsdl"/>
+    <system systemId="http://localhost:8080/proyecto5-war/UsuarioService?xsd=1" uri="wsdl/localhost_8080/proyecto5-war/UsuarioService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/proyecto5-war/TesoroService?wsdl" uri="wsdl/localhost_8080/proyecto5-war/TesoroService.wsdl"/>
+    <system systemId="http://localhost:8080/proyecto5-war/TesoroService?xsd=1" uri="wsdl/localhost_8080/proyecto5-war/TesoroService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/proyecto5-war/AvisoService?wsdl" uri="wsdl/localhost_8080/proyecto5-war/AvisoService.wsdl"/>
+    <system systemId="http://localhost:8080/proyecto5-war/AvisoService?xsd=1" uri="wsdl/localhost_8080/proyecto5-war/AvisoService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/proyecto5-war/EquipoService?wsdl" uri="wsdl/localhost_8080/proyecto5-war/EquipoService.wsdl"/>
+    <system systemId="http://localhost:8080/proyecto5-war/EquipoService?xsd=1" uri="wsdl/localhost_8080/proyecto5-war/EquipoService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/proyecto5-war/DescubrimientoService?wsdl" uri="wsdl/localhost_8080/proyecto5-war/DescubrimientoService.wsdl"/>
+    <system systemId="http://localhost:8080/proyecto5-war/DescubrimientoService?xsd=1" uri="wsdl/localhost_8080/proyecto5-war/DescubrimientoService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/proyecto5-war/ComentarioTesoro?wsdl" uri="wsdl/localhost_8080/proyecto5-war/ComentarioTesoro.wsdl"/>
+    <system systemId="http://localhost:8080/proyecto5-war/ComentarioTesoro?xsd=1" uri="wsdl/localhost_8080/proyecto5-war/ComentarioTesoro.xsd_1.xsd"/>
+</catalog>

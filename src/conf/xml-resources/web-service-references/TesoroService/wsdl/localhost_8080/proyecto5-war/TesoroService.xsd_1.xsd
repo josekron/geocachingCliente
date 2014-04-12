@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.app/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.app/">
+
+<xs:element name="countTesoro" type="tns:countTesoro"/>
+
+<xs:element name="countTesoroResponse" type="tns:countTesoroResponse"/>
+
+<xs:element name="createTesoro" type="tns:createTesoro"/>
+
+<xs:element name="devolverTesoro" type="tns:devolverTesoro"/>
+
+<xs:element name="devolverTesoroResponse" type="tns:devolverTesoroResponse"/>
+
+<xs:element name="devolverTesorosEscondidosPorUsuario" type="tns:devolverTesorosEscondidosPorUsuario"/>
+
+<xs:element name="devolverTesorosEscondidosPorUsuarioResponse" type="tns:devolverTesorosEscondidosPorUsuarioResponse"/>
+
+<xs:element name="editTesoro" type="tns:editTesoro"/>
+
+<xs:element name="equipo" type="tns:equipo"/>
+
+<xs:element name="findAllTesoro" type="tns:findAllTesoro"/>
+
+<xs:element name="findAllTesoroResponse" type="tns:findAllTesoroResponse"/>
+
+<xs:element name="findRangeTesoro" type="tns:findRangeTesoro"/>
+
+<xs:element name="findRangeTesoroResponse" type="tns:findRangeTesoroResponse"/>
+
+<xs:element name="findTesoro" type="tns:findTesoro"/>
+
+<xs:element name="findTesoroResponse" type="tns:findTesoroResponse"/>
+
+<xs:element name="removeTesoro" type="tns:removeTesoro"/>
+
+<xs:element name="tesoro" type="tns:tesoro"/>
+
+<xs:element name="tesorosDefectusos" type="tns:tesorosDefectusos"/>
+
+<xs:element name="tesorosDefectusosResponse" type="tns:tesorosDefectusosResponse"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="tesorosDefectusos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="tesorosDefectusosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tesoro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tesoro">
+<xs:sequence>
+<xs:element name="codSeguridad" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="dificultad" type="xs:int"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaEscondido" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idTesoro" type="xs:int" minOccurs="0"/>
+<xs:element name="latitud" type="xs:string" minOccurs="0"/>
+<xs:element name="longitud" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="tamanio" type="xs:string" minOccurs="0"/>
+<xs:element name="usuarioidUsuario" type="tns:usuario" minOccurs="0"/>
+<xs:element name="zona" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="equipoidEquipo" type="tns:equipo" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:int" minOccurs="0"/>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="rango" type="xs:string" minOccurs="0"/>
+<xs:element name="rol" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="equipo">
+<xs:sequence>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idEquipo" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverTesorosEscondidosPorUsuario">
+<xs:sequence>
+<xs:element name="idUsuario" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverTesorosEscondidosPorUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tesoro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverTesoro">
+<xs:sequence>
+<xs:element name="idTesoro" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverTesoroResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tesoro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findTesoro">
+<xs:sequence>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findTesoroResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tesoro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="countTesoro">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="countTesoroResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeTesoro">
+<xs:sequence>
+<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeTesoroResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tesoro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeTesoro">
+<xs:sequence>
+<xs:element name="entity" type="tns:tesoro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createTesoro">
+<xs:sequence>
+<xs:element name="entity" type="tns:tesoro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editTesoro">
+<xs:sequence>
+<xs:element name="entity" type="tns:tesoro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllTesoro">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllTesoroResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tesoro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

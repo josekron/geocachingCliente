@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.app/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.app/">
+
+<xs:element name="aviso" type="tns:aviso"/>
+
+<xs:element name="buscarAvisoId" type="tns:buscarAvisoId"/>
+
+<xs:element name="buscarAvisoIdResponse" type="tns:buscarAvisoIdResponse"/>
+
+<xs:element name="countAviso" type="tns:countAviso"/>
+
+<xs:element name="countAvisoResponse" type="tns:countAvisoResponse"/>
+
+<xs:element name="createAviso" type="tns:createAviso"/>
+
+<xs:element name="devolverListaAvisosDeUnUsuario" type="tns:devolverListaAvisosDeUnUsuario"/>
+
+<xs:element name="devolverListaAvisosDeUnUsuarioResponse" type="tns:devolverListaAvisosDeUnUsuarioResponse"/>
+
+<xs:element name="devolverListaAvisosNoLeidos" type="tns:devolverListaAvisosNoLeidos"/>
+
+<xs:element name="devolverListaAvisosNoLeidosResponse" type="tns:devolverListaAvisosNoLeidosResponse"/>
+
+<xs:element name="editAviso" type="tns:editAviso"/>
+
+<xs:element name="equipo" type="tns:equipo"/>
+
+<xs:element name="findAllAviso" type="tns:findAllAviso"/>
+
+<xs:element name="findAllAvisoResponse" type="tns:findAllAvisoResponse"/>
+
+<xs:element name="findAviso" type="tns:findAviso"/>
+
+<xs:element name="findAvisoResponse" type="tns:findAvisoResponse"/>
+
+<xs:element name="findRangeAviso" type="tns:findRangeAviso"/>
+
+<xs:element name="findRangeAvisoResponse" type="tns:findRangeAvisoResponse"/>
+
+<xs:element name="removeAviso" type="tns:removeAviso"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="removeAviso">
+<xs:sequence>
+<xs:element name="entity" type="tns:aviso" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aviso">
+<xs:sequence>
+<xs:element name="avisoPK" type="tns:avisoPK" minOccurs="0"/>
+<xs:element name="fechaEnviado" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="leido" type="xs:boolean" minOccurs="0"/>
+<xs:element name="mensaje" type="xs:string" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+<xs:element ref="tns:usuario" minOccurs="0"/>
+<xs:element name="usuario1" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="avisoPK">
+<xs:sequence>
+<xs:element name="idAviso" type="xs:int"/>
+<xs:element name="usuarioidUsuarioEmisor" type="xs:int"/>
+<xs:element name="usuarioidUsuarioReceptor" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="equipoidEquipo" type="tns:equipo" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:int" minOccurs="0"/>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="rango" type="xs:string" minOccurs="0"/>
+<xs:element name="rol" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="equipo">
+<xs:sequence>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idEquipo" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createAviso">
+<xs:sequence>
+<xs:element name="entity" type="tns:aviso" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeAviso">
+<xs:sequence>
+<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeAvisoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aviso" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverListaAvisosNoLeidos">
+<xs:sequence>
+<xs:element name="idUsuario" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverListaAvisosNoLeidosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aviso" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverListaAvisosDeUnUsuario">
+<xs:sequence>
+<xs:element name="idUsuario" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="devolverListaAvisosDeUnUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aviso" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllAviso">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllAvisoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aviso" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAvisoId">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAvisoIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="countAviso">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="countAvisoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editAviso">
+<xs:sequence>
+<xs:element name="entity" type="tns:aviso" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAviso">
+<xs:sequence>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAvisoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:aviso" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

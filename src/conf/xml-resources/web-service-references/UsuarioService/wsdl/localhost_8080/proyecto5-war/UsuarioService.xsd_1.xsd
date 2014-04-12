@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.app/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.app/">
+
+<xs:element name="actualizarRango" type="tns:actualizarRango"/>
+
+<xs:element name="autorizacion" type="tns:autorizacion"/>
+
+<xs:element name="autorizacionResponse" type="tns:autorizacionResponse"/>
+
+<xs:element name="buscarUsuario" type="tns:buscarUsuario"/>
+
+<xs:element name="buscarUsuarioResponse" type="tns:buscarUsuarioResponse"/>
+
+<xs:element name="countUsuario" type="tns:countUsuario"/>
+
+<xs:element name="countUsuarioResponse" type="tns:countUsuarioResponse"/>
+
+<xs:element name="createUsuario" type="tns:createUsuario"/>
+
+<xs:element name="editUsuario" type="tns:editUsuario"/>
+
+<xs:element name="equipo" type="tns:equipo"/>
+
+<xs:element name="existeNick" type="tns:existeNick"/>
+
+<xs:element name="existeNickResponse" type="tns:existeNickResponse"/>
+
+<xs:element name="findAllUsuario" type="tns:findAllUsuario"/>
+
+<xs:element name="findAllUsuarioResponse" type="tns:findAllUsuarioResponse"/>
+
+<xs:element name="findRangeUsuario" type="tns:findRangeUsuario"/>
+
+<xs:element name="findRangeUsuarioResponse" type="tns:findRangeUsuarioResponse"/>
+
+<xs:element name="findUsuario" type="tns:findUsuario"/>
+
+<xs:element name="findUsuarioResponse" type="tns:findUsuarioResponse"/>
+
+<xs:element name="insertarUsuario" type="tns:insertarUsuario"/>
+
+<xs:element name="removeUsuario" type="tns:removeUsuario"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="countUsuario">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="countUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeUsuario">
+<xs:sequence>
+<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="ciudad" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="equipoidEquipo" type="tns:equipo" minOccurs="0"/>
+<xs:element name="fechaNacimiento" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaRegistro" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:int" minOccurs="0"/>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="rango" type="xs:string" minOccurs="0"/>
+<xs:element name="rol" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="equipo">
+<xs:sequence>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idEquipo" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findUsuario">
+<xs:sequence>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="existeNick">
+<xs:sequence>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="existeNickResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAllUsuario">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarUsuario">
+<xs:sequence>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeUsuario">
+<xs:sequence>
+<xs:element name="entity" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editUsuario">
+<xs:sequence>
+<xs:element name="entity" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarRango">
+<xs:sequence>
+<xs:element ref="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertarUsuario">
+<xs:sequence>
+<xs:element name="u" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="autorizacion">
+<xs:sequence>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+<xs:element name="pwd" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="autorizacionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createUsuario">
+<xs:sequence>
+<xs:element name="entity" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

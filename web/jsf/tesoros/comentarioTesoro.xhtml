@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!-- Autor: José Antonio Herrera Peña 
+                Enrique Rios Santos
+                David Doña Corrales-->
+    <h:head>
+        <title>Tesoro</title>
+        <style type="text/css">
+            html { height: 100% }
+            body { height: 100%; margin: 0; padding: 0 }
+            #map-canvas { height: 100%; width: auto}
+        </style>
+        <h:outputStylesheet library="css" name="estilo.css"  />
+        <link href="/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4ALYqLeKmRqAskNe94-ZIzGqKnWmV068&amp;sensor=false&amp;language=en">
+        </script>
+
+        <script type="text/javascript">
+
+            var miLatitud;
+            var miLongitud;
+
+            function initialize() {
+
+                //AÑADIDO JOAQUIN GARCIA ----
+                //Optenemos la latitud y longitud de donde esta el navegador
+                if (typeof navigator.geolocation == 'object') {
+                    navigator.geolocation.getCurrentPosition(mostrar_ubicacion);
+                }
+
+                function mostrar_ubicacion(p)
+                {
+                    //Enrique Ríos Santos y David Doña
+                    //----
+                    miLatitud = p.coords.latitude.toString();
+                    miLongitud = p.coords.longitude.toString();
+
+                    var image = '/proyecto5/resources/imagenes/flickr.png';
+                    var myLatlng = new google.maps.LatLng(#{comentariosBean.tesoro.latitud}, #{comentariosBean.tesoro.longitud});
+                    var mapOptions = {
+                        center: myLatlng,
+                        zoom: 15
+                    };
+                    var map = new google.maps.Map(document.getElementById("map-canvas"),
+                            mapOptions);
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        title: "#{comentariosBean.tesoro.nombre}" + '\n' + "#{comentariosBean.tesoro.descripcion}"
+                    });
+                    var flickr0 = new google.maps.Marker({
+                        position:new google.maps.LatLng(#{flickrBean.listaFotos.get(0).getLocation().getLatitude()}, #{flickrBean.listaFotos.get(0).getLocation().getLongitude()}),
+                        map: map,
+                        icon: image
+                        });
+                        var contenidoPopUp0 = '<IMG SRC="#{flickrBean.listaUrlFotos.get(0)}"/><br/>Autor: #{flickrBean.listaFotos.get(0).getOwner().getUsername()}';
+                        var infowindow0 = new google.maps.InfoWindow({
+                            content: contenidoPopUp0
+                        });
+                        google.maps.event.addListener(flickr0, 'click', function() {
+                            infowindow0.open(map,flickr0);
+                        });
+                        
+                    var flickr1 = new google.maps.Marker({
+                        position:new google.maps.LatLng(#{flickrBean.listaFotos.get(1).getLocation().getLatitude()}, #{flickrBean.listaFotos.get(1).getLocation().getLongitude()}),
+                        map: map,
+                        icon: image
+                        });
+                        var contenidoPopUp1 = '<IMG SRC="#{flickrBean.listaUrlFotos.get(1)}"/><br/>Autor: #{flickrBean.listaFotos.get(1).getOwner().getUsername()}';
+                        var infowindow1 = new google.maps.InfoWindow({
+                            content: contenidoPopUp1
+                        });
+                        google.maps.event.addListener(flickr1, 'click', function() {
+                            infowindow1.open(map,flickr1);
+                        });
+                        
+                   var flickr2 = new google.maps.Marker({
+                        position:new google.maps.LatLng(#{flickrBean.listaFotos.get(2).getLocation().getLatitude()}, #{flickrBean.listaFotos.get(2).getLocation().getLongitude()}),
+                        map: map,
+                        icon: image
+                        });
+                        var contenidoPopUp2 = '<IMG SRC="#{flickrBean.listaUrlFotos.get(2)}"/><br/>Autor: #{flickrBean.listaFotos.get(2).getOwner().getUsername()}';
+                        var infowindow2 = new google.maps.InfoWindow({
+                            content: contenidoPopUp2
+                        });
+                        google.maps.event.addListener(flickr2, 'click', function() {
+                            infowindow2.open(map,flickr2);
+                        });
+                        
+                    var flickr3 = new google.maps.Marker({
+                        position:new google.maps.LatLng(#{flickrBean.listaFotos.get(3).getLocation().getLatitude()}, #{flickrBean.listaFotos.get(3).getLocation().getLongitude()}),
+                        map: map,
+                        icon: image
+                        });
+                        var contenidoPopUp3 = '<IMG SRC="#{flickrBean.listaUrlFotos.get(3)}"/><br/>Autor: #{flickrBean.listaFotos.get(3).getOwner().getUsername()}';
+                        var infowindow3 = new google.maps.InfoWindow({
+                            content: contenidoPopUp3
+                        });
+                        google.maps.event.addListener(flickr3, 'click', function() {
+                            infowindow3.open(map,flickr3);
+                        });
+                        
+                    var flickr4 = new google.maps.Marker({
+                        position:new google.maps.LatLng(#{flickrBean.listaFotos.get(4).getLocation().getLatitude()}, #{flickrBean.listaFotos.get(4).getLocation().getLongitude()}),
+                        map: map,
+                        icon: image
+                        });
+                        var contenidoPopUp4 = '<IMG SRC="#{flickrBean.listaUrlFotos.get(4)}"/><br/>Autor: #{flickrBean.listaFotos.get(4).getOwner().getUsername()}';
+                        var infowindow4 = new google.maps.InfoWindow({
+                            content: contenidoPopUp4
+                        });
+                        google.maps.event.addListener(flickr4, 'click', function() {
+                            infowindow4.open(map,flickr4);
+                        });
+                    //----
+                   
+                    //AÑADIDO JOAQUIN GARCIA ----
+                    //Añadimos un marcador al mapa de donde este el navegador
+                    // alert(miLatitud);
+                    var marcador = new google.maps.Marker({
+                        position: new google.maps.LatLng(miLatitud, miLongitud),
+                        map: map,
+                        title: 'Tu poscion actual'
+                    });
+
+                    document.getElementById("formulario:hLatitud").value = p.coords.latitude;
+                    document.getElementById("formulario:hLongitud").value = p.coords.longitude;
+                }
+                // --------
+
+
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            function latlong()
+            {
+                if (typeof navigator.geolocation == 'object') {
+                    navigator.geolocation.getCurrentPosition(mostrar_ubicacion2);
+                }
+
+                function mostrar_ubicacion2(p)
+                {
+                    //alert('posición: ' + p.coords.latitude + ',' + p.coords.longitude);
+                    document.getElementById("formulario:hLatitud").value = p.coords.latitude;
+                    document.getElementById("formulario:hLongitud").value = p.coords.longitude;
+                    var latValue = document.getElementById("formulario:hLatitud").value;
+                    alert(p.coords.latitude);
+                    document.getElementById("formulario:hCampo").value = p.coords.latitude;
+                    alert(latValue);
+
+                    return false;
+                }
+
+                return false;
+            }
+
+
+        </script>
+
+    </h:head>
+    <h:body> 
+        <h:form>
+            <h:commandButton value="Ir a Tesoros" type="submit" action="#{comentariosBean.irATesoros()}" />
+        </h:form>
+
+        <h:form id="formulario">
+            <label id="label2">Distancia desde tu posicion actual (navegador):</label>
+            <h:inputText id="hCampo"  disabled="true" value="#{comentariosBean.distancia}" />
+            <h:commandButton value="Calcular distancia" action="#{comentariosBean.calcularDistancia2()}" ></h:commandButton>
+            <h:inputHidden id="hLatitud" value="#{comentariosBean.latitud}"></h:inputHidden>
+            <h:inputHidden id="hLongitud" value="#{comentariosBean.longitud}"></h:inputHidden>
+
+        </h:form>
+
+
+        <center>
+
+            <h2><h:outputText value="#{comentariosBean.tesoro.nombre}"/></h2>
+            <p:layout style="min-width:400px;min-height:400px; max-height: 420px; max-width: 100%" id="layout">  
+                <p:layoutUnit style="background-color: #dbc59e" position="west" size="400" resizable="false">  
+                    <h3>Información de la zona:</h3>
+                    <marquee bgcolor="#dbc59e" height="80%" width="auto" scrolldelay="100" 
+                             scrollamount="5" direction="up" loop="infinite" onmouseover="this.stop();" onmouseout="this.start();">
+                        <h:dataTable value="#{comentariosBean.listaGloes}" var="item" border="0">
+                            <h:column>
+                                <b><h:outputText value="#{item.ambito}"/></b>
+                                <a href="#{item.URL}" target="_blank">#{item.nombre}</a><br/><br/>
+                            </h:column>                 
+                        </h:dataTable>
+                    </marquee>
+                </p:layoutUnit>  
+
+                <p:layoutUnit position="center">  
+                    <div id="map-canvas"/> 
+                </p:layoutUnit>  
+
+                <p:layoutUnit style="background-color: transparent" position="east" size="400" resizable="false">  
+                    <p:carousel style="background-color: transparent" rendered="#{flickrBean.fotosDisponibles}" 
+                                value="#{flickrBean.listaUrlFotos}" var="fotoCarrusel" itemStyleClass="carItem" 
+                                pageLinks="5" autoPlayInterval="4000"   
+                                numVisible="1" effect="easeInStrong" circular="true">  
+                        <p:graphicImage  width="350" height="350" value="#{fotoCarrusel}"/> 
+                    </p:carousel>
+                    <h:outputText rendered="#{!flickrBean.fotosDisponibles}" value="Fotos no disponibles"/>
+
+                </p:layoutUnit>  
+            </p:layout>           
+
+            <script type="text/javascript">
+            
+            function getXMLHttpRequest(){
+                var xmlhttp;
+                if(window.XMLHttpRequest){
+                    // IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }else{
+                    // IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                return xmlhttp;
+            }
+
+            function llamarServidorRemoto(){
+                var xmlhttp = getXMLHttpRequest();
+                /*
+                 * En lugar de llamar a la URL remota http://localhost:8080/ServidorRemoto/rest/customer/findByName?name=XXXX,
+                 * se llama a la aplicación propia (AjaxCliente) pasándole el 
+                 * valor del parámetro imput de texto
+                */
+                var entradaTexto = document.getElementById("entradaTextoAjax");
+                var latitudAjax = document.getElementById("valorLatitudAjax");
+                var longitudAjax = document.getElementById("valorLongitudAjax");
+                var ajaxURL =
+                        "http://localhost:8080/proyecto5/web/google/"+entradaTexto.value+"/"+latitudAjax.value+"/"+longitudAjax.value;
+                xmlhttp.onreadystatechange = funcionCambioEstado;
+                xmlhttp.open("GET", ajaxURL, true);
+                xmlhttp.send();
+            }
+
+            function funcionCambioEstado() {
+                if (this.readyState === 4 &amp;&amp; this.status === 200) {
+                    var respuestaCadenaJSON = this.responseText;
+                    var respuestaObjetoJSON = JSON.parse(respuestaCadenaJSON);
+                    var textoMostrar = funcionArrayCustomersJsonACadenaHTML(respuestaObjetoJSON);
+                    var contenedorAjax = document.getElementById("contenedorAjax");
+                    //como es un Div, puedo modificar su propiedad innerHTML:
+                    contenedorAjax.innerHTML = "Distancia: " + textoMostrar;
+                    
+                }else if (this.readyState === 4){
+                    var contenedorAjax = document.getElementById("contenedorAjax");
+                    //como es un Div, puedo modificar su propiedad innerHTML:
+                    contenedorAjax.innerHTML = "Error en la petici&oacute;n: " + this.status;
+                }
+            }
+            
+            function funcionArrayCustomersJsonACadenaHTML(elementoJSON) {
+               //var textoHTML = "&lt;ul&gt;";
+                //for(i=0;i&lt;elementoJSON.length;i++){
+                 //   textoHTML += "&lt;li&gt;Nombre= "+elementoJSON[i].name+"&lt;/li&gt;";
+                //}
+                //textoHTML += "&lt;/ul&gt;";
+                //return textoHTML;
+                //return "hola";
+                 var textoHTML = "";
+                textoHTML +=elementoJSON.prueba;
+                textoHTML += "";
+                return textoHTML;
+            }
+        </script>
+         <br></br>
+            <h3>Calcula la distancia:</h3>
+         <h:form>  
+             <input type="text" value="#{comentariosBean.tesoro.zona}" id="entradaTextoAjax"/>
+             <input type="hidden" value="#{comentariosBean.tesoro.latitud}" id="valorLatitudAjax"/>
+             <input type="hidden" value="#{comentariosBean.tesoro.longitud}" id="valorLongitudAjax"/>
+        <input type="button" value="Calcular Distancia" onclick="llamarServidorRemoto();"/>
+        <span id="contenedorAjax"></span>
+
+        </h:form>
+
+            <table id="cuadroTesoro">           
+                <tr>
+                    <td  align="center"><b>Descripci&oacute;n</b></td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.tesoro.descripcion}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Localizaci&oacute;n</b></td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.tesoro.latitud},#{comentariosBean.tesoro.longitud}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Zona</b></td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.tesoro.zona}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Elevacion</b></td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.tesoro.altitud}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Fecha Escondido</b></td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.tesoro.fechaEscondido}">
+                            <!-- <f:convertDateTime pattern="MM/dd/yyyy" />-->
+                        </h:outputText></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Dificultad</b></td>
+                    <td  align="left"><h:outputText value="#{tesorosBean.devolverDificultadString(comentariosBean.tesoro.dificultad)}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Encontrado</b></td>
+                    <td  align="left"><h:outputText value="#{tesorosBean.devolverSiTesoroDescubierto(comentariosBean.tesoro.idTesoro)}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Estado</b></td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.tesoro.estado}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Tama&ntilde;o</b></td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.tesoro.tamanio}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center"><b>Escondido por</b></td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.tesoro.usuarioidUsuario.nick}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center">
+                        <h:form id="irDescubrimientos">
+                            <h:commandLink value="Descubrimientos" type="submit" action="#{comentariosBean.irADescubrimientos()}">
+                            </h:commandLink>
+                        </h:form>
+                    </td>
+                    <td  align="left"><h:outputText value="#{comentariosBean.numDescubrimientos}"/></td>
+                </tr>
+                <tr>
+                    <td  align="center">
+                        <h:form id="borrarTesoro">
+                            <h:commandLink rendered="${comentariosBean.devolverSiEscondioTesoroOAdmin()==true}" value="Borrar" type="submit" action="#{comentariosBean.irABorrar()}">
+                            </h:commandLink>
+                        </h:form>
+                    </td>
+                    <td  align="left"></td>
+                </tr>
+                <tr>
+                    <td  align="center">
+                        <h:form id="informarProblema">
+                            <h:commandButton value="Informar sobre problema (Próximamente)" disabled="true" type="submit" action="#{comentariosBean.irATesoros}"/>
+                        </h:form>
+                    </td>
+                    <td  align="left"></td>
+                </tr>
+            </table>
+        </center>
+        <center>
+            <f:view>
+                <h:form>
+                    <p></p>
+                    <h:dataTable value="#{comentariosBean.listaComentarios}" var="item" border="1" width="60%">
+                        <h:column >
+                            <f:facet name="header">
+                                <h:outputText value="Usuario"/>
+                            </f:facet>
+                            <center><b>Nick:</b><h:outputText value="#{item.usuarioidUsuario.nick}"/><p></p>
+                                <b>Rango:</b><h:outputText value="#{item.usuarioidUsuario.rango}"/>
+                            </center>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Comentario"/>
+                            </f:facet>
+                            <b><h:outputText value="#{item.titulo}"/></b><p></p>
+                            <h:outputText value="#{item.texto}"/><p></p>
+                            <i><h:outputText rendered="${item.fechaUltModificacion!=null}" value="&Uacute;ltima modificaci&oacute;n:">
+                                </h:outputText>
+                                <h:outputText rendered="${item.fechaUltModificacion!=null}" value="#{item.fechaUltModificacion}">
+                                    <!-- <f:convertDateTime pattern="MM/dd/yyyy" />-->
+                                </h:outputText></i>
+                            <p></p>
+
+                            <h:commandLink rendered="${comentariosBean.usuario.rol==2}" value="Eliminar" type="submit" action="#{comentariosBean.eliminarComentario(item.idComentario)}">
+                            </h:commandLink>
+                            <h:outputText value="   "/>
+                            <h:commandLink rendered="${comentariosBean.devolverSiComentarioDeUsuarioOAdmin(item.usuarioidUsuario.idUsuario, item.usuarioidUsuario.rol)==true}" value="Editar" type="submit" action="#{comentariosBean.irAEditarComentario(item.idComentario, item.texto, item.titulo)}">
+                            </h:commandLink>
+
+                        </h:column>                  
+                    </h:dataTable>
+                </h:form>
+            </f:view>
+            <div id="cuadroRespuestaMarron">
+                <h:form id="responderC">
+                    <b>Titulo: </b><h:inputText id="tituloC" value="#{comentariosBean.tituloComentar}" /><p></p>
+                    <h:inputTextarea id="textArea"
+                                     rows="5" cols="60"
+                                     value="#{comentariosBean.textoComentar}"/>
+                    <h:commandButton value="Responder" type="submit" action="#{comentariosBean.addComentario()}" />
+                </h:form>
+            </div>
+        </center>
+
+    </h:body>
+</html>
+

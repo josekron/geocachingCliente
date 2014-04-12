@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.app/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.app/">
+
+<xs:element name="countEquipo" type="tns:countEquipo"/>
+
+<xs:element name="countEquipoResponse" type="tns:countEquipoResponse"/>
+
+<xs:element name="createEquipo" type="tns:createEquipo"/>
+
+<xs:element name="editEquipo" type="tns:editEquipo"/>
+
+<xs:element name="equipo" type="tns:equipo"/>
+
+<xs:element name="findAllEquipo" type="tns:findAllEquipo"/>
+
+<xs:element name="findAllEquipoResponse" type="tns:findAllEquipoResponse"/>
+
+<xs:element name="findEquipo" type="tns:findEquipo"/>
+
+<xs:element name="findEquipoResponse" type="tns:findEquipoResponse"/>
+
+<xs:element name="findRangeEquipo" type="tns:findRangeEquipo"/>
+
+<xs:element name="findRangeEquipoResponse" type="tns:findRangeEquipoResponse"/>
+
+<xs:element name="removeEquipo" type="tns:removeEquipo"/>
+
+<xs:complexType name="findAllEquipo">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllEquipoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:equipo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="equipo">
+<xs:sequence>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+<xs:element name="idEquipo" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findEquipo">
+<xs:sequence>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findEquipoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:equipo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editEquipo">
+<xs:sequence>
+<xs:element name="entity" type="tns:equipo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeEquipo">
+<xs:sequence>
+<xs:element name="entity" type="tns:equipo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createEquipo">
+<xs:sequence>
+<xs:element name="entity" type="tns:equipo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="countEquipo">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="countEquipoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeEquipo">
+<xs:sequence>
+<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeEquipoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:equipo" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
